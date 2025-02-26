@@ -79,25 +79,6 @@ const VendorListings: React.FC = () => {
     setFilteredListings(filtered);
   };
 
-  // Handle filter functionality
-  const handleFilter = () => {
-    let filtered = [...listings];
-
-    if (typeFilter) {
-      filtered = filtered.filter((listing) => listing.type === typeFilter);
-    }
-
-    if (priceFilter) {
-      const priceRange = priceFilter.split("-").map(Number);
-      filtered = filtered.filter(
-        (listing) =>
-          listing.pricing >= priceRange[0] && listing.pricing <= priceRange[1]
-      );
-    }
-
-    setFilteredListings(filtered);
-  };
-
   // Clear filters and reset to original listings
   const resetFilters = () => {
     setTypeFilter("");
