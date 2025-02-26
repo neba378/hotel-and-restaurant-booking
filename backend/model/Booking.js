@@ -11,11 +11,6 @@ const bookingSchema = new mongoose.Schema({
     ref: "Listing",
     required: true,
   },
-  unitId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Unit",
-    required: true,
-  },
   bookingDate: {
     type: Date,
     required: true,

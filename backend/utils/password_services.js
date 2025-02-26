@@ -3,9 +3,9 @@ const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
 exports.generateAccessToken = user => {
-    const payload = {id: user._id, email: user.email}
-    const accessToken = jwt.sign(payload, process.env.ACCESS_SECRETE, {expiresIn: '30m'});
-    const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRETE, {expiresIn: '30d'});
+    const payload = {id: user._id, email: user.email, role: user.role};
+    const accessToken = jwt.sign(payload, process.env.ACCESS_SECRETE, {expiresIn: '15m'});
+    const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRETE, {expiresIn: '15m'});
 
     return {accessToken, refreshToken};
 }

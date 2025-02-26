@@ -1,13 +1,17 @@
 const express = require("express");
-const { login, register, changePassword } = require("../controller/userController");
+const { getListings, getListing, setBooking, getBookings, decrementService } = require("../controller/userController");
+const { authMiddleware, authCustomer } = require("../utils/authMiddleware");
 const userRouter = express.Router();
 
 userRouter.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-userRouter.post("/login", login);
-userRouter.post("/register", register);
-userRouter.post("/changepassword", changePassword);
+
+userRouter.get("/services",  authMiddleware, authCustomer, getListings);
+userRouter.get("/services/:id",  authMiddleware, authCustomer, getListing);
+userRouter.post("/bookings",  authMiddleware, authCustomer, setBooking);
+userRouter.get("/bookings",  authMiddleware, authCustomer, getBookings);
+userRouter.patch("/services/:id",  authMiddleware, authCustomer, decrementService);
 
 module.exports = { userRouter };

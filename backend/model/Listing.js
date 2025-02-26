@@ -51,6 +51,11 @@ const listingSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  totalNumber: Number,
+  availability: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 module.exports = mongoose.model("Listing", listingSchema);
