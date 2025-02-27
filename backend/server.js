@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://capable-hummingbird-077a25.netlify.app/",
+    origin: "https://capable-hummingbird-077a25.netlify.app",
     credentials: true,
   })
 );
