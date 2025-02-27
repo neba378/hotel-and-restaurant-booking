@@ -39,7 +39,7 @@ const AuthForm: React.FC<AuthFormProps> = ({
   address,
   setAddress,
   handleSubmit,
-  error, // ✅ Now properly defined
+  error, 
   success,
 }) => {
   return (

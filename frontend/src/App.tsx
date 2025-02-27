@@ -20,6 +20,7 @@ function App() {
         {/* <Header /> */}
         <main className="flex-grow p-4">
           <Routes>
+            <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/customer-listings" element={<CustomerListings />} />

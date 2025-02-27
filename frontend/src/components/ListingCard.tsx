@@ -26,7 +26,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
   pricing,
   type,
   images,
-  totalNumber, // Destructure totalNumber from props
+  totalNumber, 
 }) => {
   const navigate = useNavigate();
   const handleCardClick = () => {
