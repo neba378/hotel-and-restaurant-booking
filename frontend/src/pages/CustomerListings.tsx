@@ -3,9 +3,23 @@ import { useNavigate } from "react-router-dom";
 import ListingCard from "../components/ListingCard"; // Assuming the ListingCard component is reused here
 
 const CustomerListings: React.FC = () => {
-  const [listings, setListings] = useState<any[]>([]); // Default to empty array
+  interface Listing {
+    _id: string;
+    name: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    description: string;
+    pricing: number;
+    type: string;
+    images: string[];
+    totalNumber: number;
+  }
+
+  const [listings, setListings] = useState<Listing[]>([]); // Default to empty array
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredListings, setFilteredListings] = useState<any[]>([]); // Default to empty array
+  const [filteredListings, setFilteredListings] = useState<Listing[]>([]); // Default to empty array
   const [typeFilter, setTypeFilter] = useState(""); // Filter by type (hotel/restaurant)
   const [priceFilter, setPriceFilter] = useState<string>(""); // Filter by price
   const [locationFilter, setLocationFilter] = useState({ city: "", state: "" }); // Filter by location
@@ -23,7 +37,7 @@ const CustomerListings: React.FC = () => {
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/user/services",
+          "https://hotel-and-restaurant-booking-production.up.railway.app:8000/user/services",
           {
             method: "GET",
             headers: {

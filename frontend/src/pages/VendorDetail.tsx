@@ -18,7 +18,21 @@ interface FormData {
 
 const VendorDetail: React.FC = () => {
   const { id } = useParams(); // Get listing ID from URL params
-  const [listing, setListing] = useState<any>(null);
+  interface Listing {
+    name: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    description: string;
+    facilities: string[];
+    pricing: string;
+    type: string;
+    images: string[];
+    totalNumber: string;
+  }
+
+  const [listing, setListing] = useState<Listing | null>(null);
   const [editable, setEditable] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -46,7 +60,7 @@ const VendorDetail: React.FC = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/vendor/listings/${id}`,
+          `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings/${id}`,
           {
             method: "GET",
             headers: {
@@ -97,7 +111,7 @@ const VendorDetail: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/vendor/listings/${id}`,
+        `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings/${id}`,
         {
           method: "PUT",
           headers: {
@@ -139,7 +153,7 @@ const VendorDetail: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/vendor/listings/${id}`,
+        `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings/${id}`,
         {
           method: "DELETE",
           headers: {

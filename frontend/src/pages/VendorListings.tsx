@@ -37,7 +37,7 @@ const VendorListings: React.FC = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/vendor/listings",
+          "https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings",
           {
             method: "GET",
             headers: {

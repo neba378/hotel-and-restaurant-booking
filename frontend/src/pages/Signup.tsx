@@ -32,11 +32,14 @@ const Signup: React.FC = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(userData),
-      });
+      const response = await fetch(
+        "https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        }
+      );
 
       if (response.ok) {
         setSuccess("Registration successful! Redirecting to login...");
@@ -45,7 +48,7 @@ const Signup: React.FC = () => {
         const errorData = await response.json();
         setError(errorData.message || "Registration failed");
       }
-    } catch (error) {
+    } catch {
       setError("Network error. Please try again.");
     }
   };

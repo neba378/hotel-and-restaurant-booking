@@ -16,12 +16,15 @@ const Login: React.FC = () => {
     const userData = { email, password };
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include", // To include cookies for refresh token
-        body: JSON.stringify(userData),
-      });
+      const response = await fetch(
+        "https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include", // To include cookies for refresh token
+          body: JSON.stringify(userData),
+        }
+      );
 
       const data = await response.json();
 
@@ -37,7 +40,7 @@ const Login: React.FC = () => {
       } else {
         setError(data.message || "Login failed");
       }
-    } catch (error) {
+    } catch {
       setError("Network error. Please try again.");
     }
   };
