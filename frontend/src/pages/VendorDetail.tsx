@@ -60,7 +60,7 @@ const VendorDetail: React.FC = () => {
 
       try {
         const response = await fetch(
-          `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings/${id}`,
+          `https://hotel-and-restaurant-booking-production.up.railway.app/api/vendor/listings/${id}`,
           {
             method: "GET",
             headers: {
@@ -111,7 +111,7 @@ const VendorDetail: React.FC = () => {
 
     try {
       const response = await fetch(
-        `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings/${id}`,
+        `https://hotel-and-restaurant-booking-production.up.railway.app/api/vendor/listings/${id}`,
         {
           method: "PUT",
           headers: {
@@ -153,7 +153,7 @@ const VendorDetail: React.FC = () => {
 
     try {
       const response = await fetch(
-        `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/vendor/listings/${id}`,
+        `https://hotel-and-restaurant-booking-production.up.railway.app/api/vendor/listings/${id}`,
         {
           method: "DELETE",
           headers: {

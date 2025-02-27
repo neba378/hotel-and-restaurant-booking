@@ -35,7 +35,7 @@ const CustomerDetail: React.FC = () => {
         }
 
         const response = await fetch(
-          `https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/user/services/${id}`,
+          `https://hotel-and-restaurant-booking-production.up.railway.app/api/user/services/${id}`,
           {
             method: "GET",
             headers: {
@@ -81,7 +81,7 @@ const CustomerDetail: React.FC = () => {
         return;
       }
 
-      const response = await fetch(`https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/user/bookings`, {
+      const response = await fetch(`https://hotel-and-restaurant-booking-production.up.railway.app/api/user/bookings`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -95,7 +95,7 @@ const CustomerDetail: React.FC = () => {
         setError(""); // Clear any previous error messages
         alert("Booking successfully made!");
 setAvailableRooms(availableRooms - 1);
-        await fetch(`https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/user/services/${id}`, {
+        await fetch(`https://hotel-and-restaurant-booking-production.up.railway.app/api/user/services/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

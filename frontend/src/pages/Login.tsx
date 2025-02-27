@@ -17,7 +17,7 @@ const Login: React.FC = () => {
 
     try {
       const response = await fetch(
-        "https://hotel-and-restaurant-booking-production.up.railway.app:8000/api/login",
+        "https://hotel-and-restaurant-booking-production.up.railway.app/api/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
