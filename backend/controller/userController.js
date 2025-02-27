@@ -1,4 +1,4 @@
-const User = require("../model/User");
+const User = require("../model/user");
 const { hashPassword, comparePassword, generateAccessToken } = require("../utils/password_services");
 const Listing = require("../model/Listing");
 const Booking = require("../model/Booking");
