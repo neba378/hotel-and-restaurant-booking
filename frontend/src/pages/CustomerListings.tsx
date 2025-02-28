@@ -37,7 +37,7 @@ const CustomerListings: React.FC = () => {
         }
 
         const response = await fetch(
-          "https://hotel-and-restaurant-booking-production.up.railway.app/user/services",
+          "https://hotel-and-restaurant-booking-production.up.railway.app/api/user/services",
           {
             method: "GET",
             headers: {

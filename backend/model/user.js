@@ -22,6 +22,6 @@ const userSchema = new mongoose.Schema({
   contactDetails: {
     phone: String,
     address: String,
-  },
+  }, 
 });
 module.exports = mongoose.models.User || mongoose.model("User", userSchema);
