@@ -4,8 +4,8 @@ require("dotenv").config();
 
 exports.generateAccessToken = user => {
     const payload = {id: user._id, email: user.email, role: user.role};
-    const accessToken = jwt.sign(payload, process.env.ACCESS_SECRETE, {expiresIn: '15m'});
-    const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRETE, {expiresIn: '15m'});
+    const accessToken = jwt.sign(payload, process.env.ACCESS_SECRETE, {expiresIn: '1d'});
+    const refreshToken = jwt.sign(payload, process.env.REFRESH_SECRETE, {expiresIn: '30d'});
 
     return {accessToken, refreshToken};
 }
